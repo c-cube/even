@@ -10,6 +10,15 @@
                     <a href="{{ get_taxonomy_url(kind="category", name=page.category) }}">{{ page.category }}</a>
                 </div>
             {% endif %}
+
+            {% if page.taxonomies.authors %}
+              <div class="post__authors">
+              {% for author in page.taxonomies.authors %}
+                <a href="{{ get_taxonomy_url(kind="authors", name=author) }}">{{ author }}</a>
+              {% endfor %}
+              </div>
+            {% endif %}
         </div>
     </header>
 {% endmacro title %}
+

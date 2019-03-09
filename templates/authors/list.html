@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="taxonomies">
+        <div class="taxonomies__title">
+            {{ terms | length }} authors in total
+        </div>
+        <div class="taxonomies__items">
+            {% for author in terms %}
+                <a href="{{ author.permalink }}">
+                    {{ author.name }}
+                    <span class="count">{{ author.pages | length }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
